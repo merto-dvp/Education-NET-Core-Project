@@ -1,0 +1,85 @@
+﻿@model IEnumerable<EducationProject.Models.Course>
+@{
+    ViewData["Title"] = "Items";
+}
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<h2>Items</h2>
+<p>@User.IsInRole("Admin")</p>
+<p>@User.Identity.Name</p>
+<br />
+<style>
+    #ImagesSection {
+        border: double 2px;
+        margin: 50px;
+        padding: 25px;
+        height: 900px;
+        text-align: center;
+    }
+    #Tb2 {
+        margin-left: 20px;
+    }
+
+    #imag {
+        width: 30px;
+        height: 30px;
+    }
+
+    .IndexImages {
+        margin: 100px;
+        padding: 20px;
+        height: 800px;
+        border: solid 2px;
+    }
+
+    #inImages {
+        width: 100px;
+        height: 100px;
+    }
+</style>
+<li>
+
+    @if (UserManager.GetUserName(User) == null)
+    {
+        <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello, You're not logged in!</a>
+
+    }
+    else
+    {
+
+        var userN = UserManager.GetUserName(User);
+        string myString = userN;
+        string[] subStrings = myString.Split('@');
+        if (subStrings[0] == "admin")
+        {
+            <a>Welcome Admin!</a>
+        }
+
+
+        <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Welcome @subStrings[0] !</a><br /><br />
+
+        <a>->Guid: @UserManager.GetUserId(User)</a>
+  
+      
+        <input type="text" id="inputId" />
+
+
+
+    }
+
+</li>
+
+<div>
+    <div id="ImagesSection">
+        <a>These are courses:</a>
+        
+
+
+
+    </div>
+</div>
+
+

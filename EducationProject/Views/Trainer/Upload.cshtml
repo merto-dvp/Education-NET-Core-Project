@@ -1,0 +1,39 @@
+﻿@model EducationProject.Models.FileUploading
+@{
+    ViewData["Title"] = "Upload";
+}
+
+<section class="banner-area relative about-banner" id="home" style="height:300px">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center" style="height:200px">
+            <div class="about-content col-lg-12">
+                <h1 class="text-white">
+                    Dosya Yükleme
+
+                </h1>
+                <br />
+           
+            </div>
+        </div>
+    </div>
+</section>
+<div class="about-content" style="margin-top:-2%">
+
+        <form method="post" enctype="multipart/form-data"  asp-controller="Trainer" asp-for="fileName" asp-action="PostFile">
+            <div class="container align-self-md-center">
+                
+             
+                  
+                    
+                    <input type="file" name="files" class="genric-btn small primary" accept=".png,.jpg,.jpeg,.mp4,.3gp" />
+                    <input type="submit" class="genric-btn medium primary" value="Yükle" />
+              
+
+           
+            
+            </div>
+        </form>
+    
+    <br /><br /><br /><br /><br />
+</div>

@@ -1,0 +1,99 @@
+﻿@model EducationProject.Models.Course
+
+<section class="banner-area relative about-banner" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+
+    </div>
+</section>
+
+<div class="whole-wrap">
+    <div class="container">
+        <div class="section-top-border">
+            <div class="row">
+                <div class="table table-bordered table-striped table-sm m-1 p-1">
+                    <a asp-action="Index">Geri Dön</a>
+                    <form asp-action="CreateCourse">
+
+                        <div class="mt-10">
+                            <label asp-for="Name" class="control-label">Kurs Adı</label>
+                            <input asp-for="Name " type="text" name="Name" placeholder="Ad" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ad'" required="" class="single-input">
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="mt-10">
+                            <label asp-for="Duration" class="control-label">Süresi</label>
+                            <input asp-for="Duration " type="text" name="duration" placeholder="Süre" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ad'" required="" class="single-input">
+                            <span asp-validation-for="Duration" class="text-danger"></span>
+                        </div>
+                        <div class="mt-10">
+                            <label asp-for="Price" class="control-label">Fiyatı</label>
+                            <input asp-for="Price " type="text" name="price" placeholder="Fiyat" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ad'" required="" class="single-input">
+                            <span asp-validation-for="Price" class="text-danger"></span>
+                        </div>
+                        <div class="mt-10">
+                            <label asp-for="Description" class="control-label">Açıklama</label>
+                            <input asp-for="Description " type="text" name="Description" placeholder="Açıklama" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ad'" required="" class="single-input">
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                        <div class="mt-10">
+                            <label asp-for="ThumbnailUrl" class="control-label"></label>
+                            <a class="genric-btn primary circle" asp-controller="Upload" asp-action="Index">Upload</a>
+                            <input asp-for="ThumbnailUrl " type="text" name="ThumbnailUrl" placeholder="Thumbnail Url" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ad'" required="" class="single-input">
+
+                            @*<input type="file" asp-for="ThumbnailUrl" name="ThumbnailUrl" accept=".png,.jpg,.jpeg" />*@
+                            <span asp-validation-for="ThumbnailUrl" class="text-danger"></span>
+                        </div>
+                        <div class="mt-10">
+                            <label asp-for="VideoUrl" class="control-label"></label>
+                            <a class="genric-btn primary circle" asp-controller="Upload" asp-action="Index">Upload</a>
+                            <input asp-for="VideoUrl " type="text" name="VideoUrl" placeholder="Video Url" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ad'" required="" class="single-input">
+                            @*<input type="file" asp-for="VideoUrl" name="VideoUrl" accept=".mp4,.3gp,.flv    " />*@
+                            <span asp-validation-for="VideoUrl" class="text-danger"></span>
+                        </div>
+                        @*<div class="mt-10">
+                                <label asp-for="Trainer" class="control-label">Eğitmen Adı</label>
+                                <input asp-for="Trainer " type="text" name="Trainer" placeholder="Eğitmen Adı" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ad'" required="" class="single-input">
+                                <span asp-validation-for="Trainer" class="text-danger"></span>
+                            </div>*@
+                        <div class="mt-10">
+                            <label asp-for="DetailDescription" class="control-label">Detaylı Açıklama</label>
+                            <input asp-for="DetailDescription " type="text" name="DetailDescription" placeholder="Detaylı Açıklama" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ad'" required="" class="single-input">
+                            <span asp-validation-for="DetailDescription" class="text-danger"></span>
+                        </div>
+                        <div class="mt-10">
+                            <label asp-for="VidCategory" class="control-label">Kategori</label>
+                            <input asp-for="VidCategory " type="text" name="VidCategory" placeholder="Kategori" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ad'" required="" class="single-input">
+                            <span asp-validation-for="VidCategory" class="text-danger"></span>
+                        </div>
+
+                        <div class="input-group-icon mt-10">
+                            <input type="submit" value="Oluştur" class="btn btn-default" />
+                        </div>
+                        <div class="input-group-icon mt-10">
+
+                            @*<select class="nice-select">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>*@
+
+
+
+                        </div>
+                    </form>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+

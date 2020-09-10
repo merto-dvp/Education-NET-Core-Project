@@ -1,0 +1,153 @@
+﻿@model EducationProject.Models.UsersAndCourses
+<!-- start banner Area -->
+
+
+<section class="banner-area relative about-banner" id="home" style="height:300px">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center" style="height:200px">
+            <div class="about-content col-lg-12">
+                <h1 class="text-white">
+                    Mağaza
+                </h1>
+                <p class="text-white link-nav"><a asp-action="Index" asp-controller="Home">Kurslar </a>  <span class="lnr lnr-arrow-right"></span>  <a asp-action="Courses" asp-controller="Home"> Tümü</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    input[type=text] {
+        width: 200px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: white;
+        background-image: url("https://www.w3schools.com/howto/searchicon.png");
+        background-repeat: no-repeat;
+        text-align: center;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+        margin-top:-80px;
+    }
+
+        input[type=text]:focus {
+            width:400px;
+            
+        }
+</style>
+
+
+
+
+
+
+<section class="popular-courses-area section-gap courses-page">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+
+            <form>
+                <input class="list-group-item" type="text" name="search" id="searchbar" placeholder="Arama" onkeyup="javascript:getCourses()" />
+            </form>
+
+
+
+
+        </div>
+
+
+        <div id="courses" class="row">
+
+
+
+
+        </div>
+        <br /> <br /> <br /> <br /><br /><br />
+    </div>
+</section>
+<!-- End popular-courses Area -->
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+
+    loadCourses("");
+    var courses;
+
+    function loadCourses(search) {
+        var jsonCourses = '@Html.Raw(Json.Serialize(Model.Kurslar))';
+        courses = JSON.parse(jsonCourses);
+
+        var items = [];
+
+        for (var i = 0; i < courses.length; i++) {
+
+            var course = courses[i];
+            if (!course.isDele) {
+                if (search !== ""  && course.name.toLowerCase().indexOf(search.toLowerCase()) === -1)
+                    continue;
+
+                items.push('<div class="single-popular-carusel col-lg-3 col-md-6">');
+                i
+                items.push('<div class="thumb-wrap relative">');
+
+                items.push('<div class="thumb relative">');
+                items.push('<div class="overlay overlay-bg"></div>');
+
+                items.push('<a href="javascript:goDetail(' + course.id + ')">');
+
+                items.push('<img class="img-fluid" style="width:320px;height:240px" src="../img/' + course.thumbnailUrl + '"/>');
+                items.push('</a>');
+
+                items.push('</div>');
+                items.push('<div class="meta d-flex justify-content-between text-black">');
+
+                items.push('<p><span class="lnr lnr-users" ></span> 20 <span class="lnr lnr-bubble"></span>35</p>');
+                items.push('<h4>' + course.price + ' Kredi' + '</h4>');
+                items.push('</div>');
+                items.push('</div>');
+
+                if (course.isPurchased) {
+                    items.push('<a disabled="disabled" class="genric-btn primary squire" style="background-color:#666;margin-top:1%;width:100%">Satın Alındı</a>');
+                }
+                else {
+                    items.push('<a href="javascript:buyCourse(' + course.id + ')" class="genric-btn primary squire" style="background-color:#666;margin-bottom:10px;width:100%">Satın Al</a>');
+                }
+                items.push('<div class="details">');
+                items.push('<a href="javascript:goDetail(' + course.id + ')">');
+                items.push('<h4>');
+                items.push(course.name + ' / ' + course.trainer);
+                items.push('</h4>');
+                items.push('</a>');
+                items.push('<p>');
+                items.push(course.description);
+                items.push('</p>');
+                items.push('</div>');
+               
+
+                items.push('</div>');
+              
+            }
+        }
+        $("#courses").html(items.join(' '));
+    }
+
+    function getCourses() {
+        var search = $('#searchbar').val();
+        loadCourses(search);
+
+    }
+    function buyCourse(courseId) {
+        location.href = '@Url.Action("Buy", "UserCourses")?CourseId=' +courseId;
+    }
+
+
+    window.goDetail = function (courseId) {
+        location.href = '@Url.Action("Details", "Courses")/' + courseId;
+    }
+    
+
+
+</script>
+
+

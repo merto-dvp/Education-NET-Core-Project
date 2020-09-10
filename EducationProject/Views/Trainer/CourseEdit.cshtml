@@ -1,0 +1,73 @@
+﻿@model EducationProject.Models.Course
+
+@{
+    ViewData["Title"] = "Edit";
+    var ImgUrl = Model.ThumbnailUrl;
+}
+
+
+<div class="whole-wrap">
+    <div class="container">
+        <div class="section-top-border">
+
+            <form asp-action="CourseEdit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label">Kurs Adı</label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Price" class="control-label">Fiyatı</label>
+                    <input asp-for="Price" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Duration" class="control-label">Süresi</label>
+                    <input asp-for="Duration" class="form-control" />
+                    <span asp-validation-for="Duration" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ThumbnailUrl" class="control-label"></label><br />
+                    <img class="img-fluid" style="width:102px;height:80px" src="~/img/@ImgUrl" onerror="this.onerror=null;this.src='../img/default.png';" />
+                    <a class="genric-btn medium primary" asp-controller="Trainer" asp-action="UploadFilesTr">Upload</a>
+                    <br />
+                    <label asp-for="ThumbnailUrl" class="control-label"></label>
+                    <input asp-for="ThumbnailUrl" class="form-control" />
+                    <span asp-validation-for="ThumbnailUrl" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="VideoUrl" class="control-label"></label>
+
+                    <input asp-for="VideoUrl" class="form-control" />
+                    <span asp-validation-for="VideoUrl" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label">Açıklama</label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+               
+                <div class="form-group">
+                    <label asp-for="DetailDescription" class="control-label">Detaylı Açıklama</label>
+                    <input asp-for="DetailDescription" class="form-control" />
+                    <span asp-validation-for="DetailDescription" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="VidCategory" class="control-label">Kategori</label>
+                    <input asp-for="VidCategory" class="form-control" />
+                    <span asp-validation-for="VidCategory" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Kaydet" class="btn btn-default" />
+                    <a asp-action="CoursesIndex">Geri Dön</a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+</div>

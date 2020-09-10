@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+<head>
+
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/fav.png">
+    <!-- Author Meta -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>Deneme</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+    <!--
+    CSS
+    ============================================= -->
+    <link rel="stylesheet" href="~/css/linearicons.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap.css">
+    <link rel="stylesheet" href="~/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/css/nice-select.css">
+    <link rel="stylesheet" href="~/css/animate.min.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.css">
+    <link rel="stylesheet" href="~/css/jquery-ui.css">
+    <link rel="stylesheet" href="~/css/main.css">
+    <style>
+    </style>
+</head>
+<body>
+    <header id="home">
+        <div class="header-top">
+            <div class="container">
+                <div class="row align-items-center justify-content-between d-flex">
+                    <button type="button" id="mobile-nav-toggle" style="border:1px solid;background-color:grey;margin:1px"><i class="lnr lnr-menu"></i></button>
+                    @*<a asp-action="Index" asp-controller="Home"><button type="button" id="qrCode" style="border:1px solid;background-color:white;margin:1px"><i class="lnr lnr-home"></i></button></a>*@
+                    <div id="logo">
+                        @*<a asp-area="" asp-controller="Home" asp-action=""><img src="~/img/logo.png" alt="" title="" /></a>*@
+                        <a asp-area="" asp-controller="Home" asp-action=""><img src="~/img/logo.png" alt="" title="" />+</a>
+
+                    </div>
+                    <div class="row">
+                        <nav id="nav-menu-container">
+
+                            <ul class="nav-menu" style="padding-top:1%">
+
+                                @*;margin-right:1px;margin-left:1px;margin-top:12px;margin-bottom:12px;width:120px;height:40px*@
+                                <li><a asp-area="" class="genric-btn primary circle" style="border-color:grey;background:rgba(19,23,35,1.2);width:120px" asp-controller="Home" asp-action="Courses">Kurslar</a></li>
+                                <li><a asp-area="" class="genric-btn primary circle" style="border-color:grey;background:rgba(19,23,35,1.2);width:120px" asp-controller="Upload" asp-action="Index">Upload</a></li>
+                                <li><a asp-area="" class="genric-btn primary circle" style="border-color:grey;background:rgba(19,23,35,1.2);width:120px" asp-controller="UserCourses" asp-action="MyCourses">Hesabım</a></li>
+                                <li><a asp-area="" class="genric-btn primary circle" style="border-color:grey;background:rgba(19,23,35,1.2);width:120px" asp-controller="UserCredits" asp-action="Create">Kredi Ekle</a></li>
+
+
+
+                                <li style="margin-top:-1.5%"><partial name="_LoginPartial" /></li>
+
+                            </ul>
+
+
+
+
+
+
+                        </nav>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header><!-- #header -->
+
+
+    @RenderBody()
+
+
+    <!-- start footer Area -->
+    <footer class="footer-area section-gap">
+        <div class="container" style="margin-bottom:-100px;margin-top:-80px">
+            <div class="row">
+                <div class="col-lg-2 col-md-6 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h4>Hakkımızda</h4>
+                        <ul>
+                            <li><a href="#">Site Hakkında</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h4>Hedeflerimiz</h4>
+                        <ul>
+                            <li><a href="#">Planlarımız</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h4>Hizmetlerimiz</h4>
+                        <ul>
+                            <li><a href="#">Servislerimiz</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h4>Kaynaklar</h4>
+                        <ul>
+                            <li><a href="#">Kaynaklarımız</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4  col-md-6 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h4>Anımsatıcı</h4>
+                        <p>Takip listesine katılın, haberdar edelim.</p>
+                        <div class="" id="mc_embed_signup">
+                            <form target="_blank" action="" method="get">
+                                <div class="input-group">
+                                    <input class="form-control" name="EMAIL" placeholder="Mail Adresi" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email Address '" required="" type="email">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-default" type="submit">
+                                            <span class="lnr lnr-arrow-right"></span>
+                                        </button>
+                                    </div>
+                                    <div class="info"></div>
+
+                                </div>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+    </footer>
+
+
+
+    <script src="~/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="~/js/vendor/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+    <script src="~/js/easing.min.js"></script>
+    <script src="~/js/hoverIntent.js"></script>
+    <script src="~/js/superfish.min.js"></script>
+    <script src="~/js/jquery.ajaxchimp.min.js"></script>
+    <script src="~/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/js/jquery.tabs.min.js"></script>
+    <script src="~/js/jquery.nice-select.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/mail-script.js"></script>
+    <script src="~/js/main.js"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+
+@*<li><a asp-area="" id="mobile-body-overly" class="genric-btn primary circle" style="border-color:grey;background:rgba(19,23,35,1.2);margin-right:1px;margin-left:1px;margin-top:12px;margin-bottom:12px;width:120px;height:40px;" asp-controller="Home" asp-action="Index">Anasayfa</a></li>
+    <li><a asp-area="" id="mobile-body-overly" class="genric-btn primary circle" style="border-color:grey;background:rgba(19,23,35,1.2);margin-right:1px;margin-left:1px;margin-top:12px;margin-bottom:12px;width:120px;height:40px" asp-controller="Home" asp-action="Courses">Kurslar</a></li>
+    <li><a asp-area="" id="mobile-body-overly" class="genric-btn primary circle" style="border-color:grey;background:rgba(19,23,35,1.2);margin-right:1px;margin-left:1px;margin-top:12px;margin-bottom:12px;width:120px;height:40px" asp-controller="UserCourses" asp-action="MyCourses">Hesabım</a></li>
+    <li><a asp-area="" id="mobile-body-overly" class="genric-btn primary circle" style="border-color:grey;background:rgba(19,23,35,1.2);margin-right:1px;margin-left:1px;margin-top:12px;margin-bottom:12px;width:120px;height:40px" asp-controller="UserCredits" asp-action="Create">Kredi Ekle</a></li>*@

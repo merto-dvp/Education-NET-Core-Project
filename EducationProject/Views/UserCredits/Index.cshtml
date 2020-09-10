@@ -1,0 +1,60 @@
+﻿@model IEnumerable<EducationProject.Models.UserCredit>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section class="banner-area relative about-banner" id="home" style="height:300px">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center" style="height:200px">
+            <div class="about-content col-lg-12">
+                <h1 class="text-white">
+                    Satın Alma/Kredi Yükleme Geçmişi
+                </h1>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container" style="padding:2%;text-align:center">
+    <p>
+      
+
+       
+    </p>
+    <table class="table table-bordered table-striped table-sm m-1 p-1">
+        <thead>
+            <tr>
+                <th>
+                    Kullanıcı Id
+                </th>
+                <th>
+                    Açıklama
+                </th>
+                <th>
+                    Tarih
+                </th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserId)
+                    </td>
+                   
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Action)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                 
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br /><br /><br /><br /><br /><br /><br />
+</div>

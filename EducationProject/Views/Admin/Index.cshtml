@@ -1,0 +1,50 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@{
+    ViewData["Title"] = "AdminPanel";
+}
+@model EducationProject.Models.UsersAndCourses
+
+<section class="banner-area relative about-banner" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container" >
+        <div class="row d-flex align-items-center justify-content-center "style="height:300px">
+            <div class="about-content col-lg-12" style="height:200px">
+                                   
+                    <h1 class="text-white">Yönetici Paneli</h1>
+             
+                    
+                    <h4 class="text-white">Hoşgeldiniz <strong>@UserManager.GetUserName(User)</strong></h4>
+
+        </div>
+    </div>
+        </div>
+</section>
+
+<div class="whole-wrap">
+    <div class="container">
+        <div class="section-top-border">
+            <div class="row">
+                <div class="col-lg-12 center-block" style="text-align:center">
+                    <br />
+                   
+                    <a asp-area="" class="genric-btn primary circle" asp-action="CoursesIndex">Kurs Yönetimi</a>
+                    <a asp-area="" class="genric-btn primary circle" asp-action="UsersIndex">Satın Alma Yönetimi</a>
+                    <a asp-area="" class="genric-btn primary circle" asp-action="Index" asp-controller="UserRoles">Kullanıcı Yetkileri Yönetimi</a>
+                    <a asp-area="" class="genric-btn primary circle" asp-action="Index" asp-controller="UserCredits">Kredi Sistemi Özeti</a>
+                    <a asp-area="" class="genric-btn primary circle" asp-action="Index" asp-controller="Account">Kullanıcı Hesapları Yönetimi</a>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <br />
+</div>
+
+
+

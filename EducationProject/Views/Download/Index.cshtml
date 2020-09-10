@@ -1,0 +1,15 @@
+﻿@model EducationProject.Models.UploadedFile
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+
+ID= @Model.id <br />
+Filename=  @Model.fileName@Model.extension<br />
+Filesize=  @Model.fileSize<br />
+
+
+
+<a asp-area="" class="genric-btn primary circle" style="border-color:grey;background:rgba(19,23,35,1.2);width:120px" asp-controller="Download" asp-action="CreateLink" asp-route-id=@Model.id>Download</a></li>

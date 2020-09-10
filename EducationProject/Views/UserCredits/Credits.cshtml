@@ -1,0 +1,60 @@
+﻿@model IEnumerable<EducationProject.Models.UserCredit>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="container" style="padding:2%;text-align:center">
+    <p>
+        <h3>Satın Alma/Kredi Yükleme Geçmişi</h3>
+        <br />
+
+        <a asp-action="Create">Hesaba Kredi Ekle</a>
+    </p>
+    <table class="table table-bordered table-striped table-sm m-1 p-1">
+        <thead>
+            <tr>
+                <th>
+                    Kullanıcı Adı
+                </th>
+                <th>
+                    İşlem
+                </th>
+                <th>
+                    Açıklama
+                </th>
+                <th>
+                    Tarih
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Credit)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Action)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        <a asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br />
+    <br /><br />
+    <br />
+</div>

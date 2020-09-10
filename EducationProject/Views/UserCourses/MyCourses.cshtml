@@ -1,0 +1,97 @@
+﻿@model EducationProject.Models.UsersAndCourses
+
+@{
+    ViewData["Title"] = "Kurslarım";
+}
+
+<!-- start banner Area -->
+
+<section class="banner-area relative about-banner" id="home" style="height:300px">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center" style="height:200px">
+            <div class="about-content col-lg-12">
+                <h1 class="text-white">
+                    Hesabım
+                </h1>
+                <p class="text-white link-nav"><a asp-action="Index" asp-controller="Home">Anasayfa </a>  <span class="lnr lnr-arrow-right"></span>  <a asp-action="MyCourses" asp-controller="UserCourses"> Kurslarım</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+@{
+    var items = @Model.Kurslar.Count();
+    var boughtitems = new int();
+    foreach (var course in Model.Kurslar)
+    {
+        if (course.IsPurchased == true)
+        {
+            boughtitems++;
+
+        }
+
+    }
+}
+
+<br /><br />
+<h4 style="text-align:center;margin-bottom:-100px;">@boughtitems kayıt bulundu.</h4>
+<section class="popular-courses-area section-gap courses-page">
+    <div class="container">
+
+        <div class="row">
+
+
+
+            @foreach (var course in Model.Kurslar)
+            {
+                @if (course.IsPurchased)
+                {
+
+                    <div class="single-popular-carusel col-lg-3 col-md-6">
+                        <div class="thumb-wrap relative">
+                            <div class="thumb relative">
+
+
+                                <a asp-controller="Courses" asp-action="Details" asp-route-id="@course.Id">
+                                    <img class="img-fluid" style="height:240px;width:320px" alt="" src="~/img/@course.ThumbnailUrl" onerror="this.onerror=null;this.src='../img/default.png';" />
+                                </a>
+                            </div>
+                            <div class="meta d-flex justify-content-between">
+                                <p><span class="lnr lnr-users"></span> 0 <span class="lnr lnr-bubble"></span>1</p>
+                                <h4>@course.Price Kredi</h4>
+                            </div>
+                        </div>
+                        <div class="details">
+
+
+
+
+
+
+                            <a asp-controller="Courses" asp-action="Details" asp-route-id="@course.Id"><h4>@course.Name</h4></a>
+
+                            <div class="title text-center">
+
+                                <a>
+
+                                    @course.Description
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                }
+                else
+                {
+
+                }
+            }
+
+            <br /><br />
+            <a asp-area="" asp-controller="Home" class="primary-btn text-uppercase mx-auto" style="width:100%;text-align:center" asp-action="Courses">Mağazayı Görüntüle</a>
+            <br /><br />
+        </div>
+
+    </div>
+    <br /> <br /> <br /> <br /> <br /> 
+</section>

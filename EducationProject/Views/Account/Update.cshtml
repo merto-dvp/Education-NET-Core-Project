@@ -1,0 +1,40 @@
+﻿@model IdentityUser
+@{
+    ViewData["Title"] = "Update";
+}
+<section class="banner-area relative about-banner" id="home" style="height:300px">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center" style="height:200px">
+            <div class="about-content col-lg-12">
+                <h1 class="text-white">
+                    Şifre Değiştir
+                </h1>
+               </div>
+        </div>
+    </div>
+</section>
+
+<div class="container" style="padding:5%;text-align:center">
+
+    <div class="text-danger" asp-validation-summary="All"></div>
+    <form class="m-1 p-1" asp-action="Update" method="post">
+
+        <div class="text-danger" asp-validation-summary="All"></div>
+
+        <div class="form-group">
+            <label for="UserName"> Kullanıcı Adı</label>
+            <input asp-for="UserName" class="form-control" style="text-align:center" disabled />
+        </div>
+
+        <div class="form-group">
+            <label for="Password">Şifre</label>
+            <input name="Password" type="password" style="text-align:center" class="form-control" />
+        </div>
+
+
+        <input type="submit" class="btn btn-primary" value="Değiştir" />
+        <a asp-action="Index" class="btn btn-danger">İptal</a>
+    </form>
+
+</div>

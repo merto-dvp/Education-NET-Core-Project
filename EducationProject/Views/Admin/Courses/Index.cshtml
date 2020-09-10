@@ -1,0 +1,138 @@
+﻿@model IEnumerable<EducationProject.Models.Course>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+    .table {
+        padding: 60px;
+    }
+</style>
+<section class="banner-area relative about-banner" id="home" style="height:300px">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center" style="height:200px">
+            <div class="about-content col-lg-12">
+                <h1 class="text-white">
+                    Kurs Yönetimi
+                </h1>
+               </div>
+        </div>
+    </div>
+</section>
+
+<div class="whole-wrap">
+    <div class="container">
+        <div class="section-top-border" style="text-align:center">
+
+            
+            
+            @if (TempData["message"] != null)
+            {
+                <div class="alert alert-success">
+                    @TempData["message"]
+                </div>
+            }
+            <a class="genric-btn primary circle" asp-controller="Admin" asp-action="CreateCourse">Kurs Oluştur</a>
+            <a class="genric-btn primary circle" asp-controller="Upload" asp-action="Index">Upload</a>
+           
+            <table class="table table-bordered table-striped table-sm m-1 p-1">
+                
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Id)
+                        </th>
+                        <th>
+                            Kurs Adı
+                        </th>
+                        <th>
+                            Fiyatı
+                        </th>
+                        <th>
+                            Süre
+                        </th>
+                        <th>
+                            ImgUrl
+                        </th>
+                        <th>
+                            VidURL
+                        </th>
+
+                        <th>
+                            Öğretmen
+                        </th>
+
+                        <th>
+                            Kategori
+                        </th>
+                        <th>
+                            Silindi
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Price)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Duration)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ThumbnailUrl)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.VideoUrl)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Trainer)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.VidCategory)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IsDeleted)
+                            </td>
+                            <td>
+                                @{
+                                    @if (item.IsDeleted)
+                                    {
+                                        <a asp-action="ActiveCourse" asp-route-id="@item.Id">Aktive Et</a> <a>|</a>
+                                    }
+                                    else
+                                    {
+                                        <a asp-action="CourseDelete" asp-route-id="@item.Id">Deaktive Et</a> <a>|</a>
+                                    }
+
+                                }
+                                <a asp-action="CourseEdit" asp-route-id="@item.Id">Düzenle</a> |
+
+
+                                <a asp-action="DeletePermCourse" asp-route-id="@item.Id">Tamamen Sil</a> <a> |</a>
+                            </td>
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br /><br />
+  
+  
+  
+</div>
+    

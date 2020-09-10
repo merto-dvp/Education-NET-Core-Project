@@ -1,0 +1,44 @@
+﻿@model EducationProject.Models.UserCredit
+
+@{
+    ViewData["Title"] = "Kredi Ekle";
+}
+
+<section class="banner-area relative about-banner" id="home" style="height:300px">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex align-items-center justify-content-center" style="height:200px">
+            <div class="about-content col-lg-12">
+                <h1 class="text-white">
+                   Kredi Ekle
+                </h1>
+            </div>
+        </div>
+    </div>
+</section>
+      <div class="container" style="padding:5%;text-align:center">
+
+          <div class="text-danger" asp-validation-summary="All"></div>
+                    <h4>@await Component.InvokeAsync("CreditsLayout") Krediniz var.</h4><br />
+          <br />
+
+
+
+          <form asp-action="Create" method="post">
+
+              <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
+
+              <div class="form-group">
+                  <label> Eklemek İstediğiniz Kredi Miktarı</label>
+                  <input asp-for="Credit" min="0"  style="text-align:center"class="form-control" />
+              </div>
+
+
+              <button type="submit" class="btn btn-primary">Onayla</button>
+          </form>
+
+          <br /><br />
+      </div>
+
+
+

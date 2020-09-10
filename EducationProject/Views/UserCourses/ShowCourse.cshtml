@@ -1,0 +1,311 @@
+﻿@model EducationProject.Models.Course
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <style>
+      
+        #buyDiv {
+            padding:5%;
+            margin-top: -200px;
+            width:100%;
+            height:100%;
+            
+            text-align: center;
+           
+        }
+        #imag3 {
+            width: 40%;
+            height: 40%;
+            margin-right: 10px;
+            float: left;
+        }
+        #imgDiv{
+            width:80%;
+            height:80%;
+            padding:2px;
+            margin:5%;
+        }
+        #desc{
+            
+               
+           text-align:center;
+        }
+       
+    </style>
+    <meta name="viewport" content="width=device-width" />
+    <title>View</title>
+</head>
+
+<body>
+
+    <br /><br /><br /><br /><br /><br /><br /><br />
+
+    <div class="container">
+
+        <div id="buyDiv">
+            <div id="desc">
+
+
+
+                @if (Model.IsPurchased == true)
+                {
+
+                    <video controls autoplay src="~/img/@Model.VideoUrl " width="100%" height="100%"></video>
+
+                }
+                else
+                {
+                    <h4> @Model.Name satın alınmamış.</h4>
+                    <br />
+                    <a asp-area="" asp-controller="UserCourses" asp-action="Buy" asp-route-courseId="@Model.Id" class="genric-btn primary squire" style="background-color:#666;margin-bottom:10px">Satın Al</a>
+                }
+
+
+                <div class="row d-flex justify-content-center" style="margin-top:-100px">
+                    <section class="course-details-area pt-120">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-8 left-contents">
+
+                                    <div class="jq-tab-wrapper horizontal-tab" id="horizontalTab">
+                                        <div class="jq-tab-menu">
+                                            <div class="jq-tab-title active" data-tab="1">Detaylar</div>
+
+                                            <div class="jq-tab-title" data-tab="3">İçerik</div>
+                                            <div class="jq-tab-title" data-tab="4">Yorumlar</div>
+                                            <div class="jq-tab-title" data-tab="5">Puanlama</div>
+                                        </div>
+                                        <div class="jq-tab-content-wrapper">
+                                            <div class="jq-tab-content active" data-tab="1">
+                                                @Model.DetailDescription
+                                                <br>
+
+                                            </div>
+                                            <div class="jq-tab-content" data-tab="2">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.
+                                                <br>
+                                                <br>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.
+                                            </div>
+                                            <div class="jq-tab-content" data-tab="3">
+                                                <ul class="course-list">
+                                                    <li class="justify-content-between d-flex">
+                                                        <p>Introduction Lesson</p>
+                                                        <a class="primary-btn text-uppercase" href="#">View Details</a>
+                                                    </li>
+                                                    <li class="justify-content-between d-flex">
+                                                        <p>Basics of HTML</p>
+                                                        <a class="primary-btn text-uppercase" href="#">View Details</a>
+                                                    </li>
+                                                    <li class="justify-content-between d-flex">
+                                                        <p>Getting Know about HTML</p>
+                                                        <a class="primary-btn text-uppercase" href="#">View Details</a>
+                                                    </li>
+                                                    <li class="justify-content-between d-flex">
+                                                        <p>Tags and Attributes</p>
+                                                        <a class="primary-btn text-uppercase" href="#">View Details</a>
+                                                    </li>
+                                                    <li class="justify-content-between d-flex">
+                                                        <p>Basics of CSS</p>
+                                                        <a class="primary-btn text-uppercase" href="#">View Details</a>
+                                                    </li>
+                                                    <li class="justify-content-between d-flex">
+                                                        <p>Getting Familiar with CSS</p>
+                                                        <a class="primary-btn text-uppercase" href="#">View Details</a>
+                                                    </li>
+                                                    <li class="justify-content-between d-flex">
+                                                        <p>Introduction to Bootstrap</p>
+                                                        <a class="primary-btn text-uppercase" href="#">View Details</a>
+                                                    </li>
+                                                    <li class="justify-content-between d-flex">
+                                                        <p>Responsive Design</p>
+                                                        <a class="primary-btn text-uppercase" href="#">View Details</a>
+                                                    </li>
+                                                    <li class="justify-content-between d-flex">
+                                                        <p>Canvas in HTML 5</p>
+                                                        <a class="primary-btn text-uppercase" href="#">View Details</a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="jq-tab-content comment-wrap" data-tab="4">
+                                                <div class="comments-area">
+                                                    <h4>Yorumlar</h4>
+                                                    <div class="comment-list">
+                                                        <div class="single-comment justify-content-between d-flex">
+                                                            <div class="user justify-content-between d-flex">
+                                                                <div class="thumb">
+                                                                    <img src="img/blog/c1.jpg" alt="">
+                                                                </div>
+                                                                <div class="desc">
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="comment-list left-padding">
+                                                        <div class="single-comment justify-content-between d-flex">
+                                                            <div class="user justify-content-between d-flex">
+                                                                <div class="thumb">
+                                                                    <img src="img/blog/c2.jpg" alt="">
+                                                                </div>
+                                                                <div class="desc">
+                                                                    <h5><a href="#">User</a></h5>
+
+                                                                    <p class="comment white">
+                                                                        Çok iyi.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="comment-form">
+                                                    <h4>Yorum yazın.</h4>
+                                                    <form>
+
+                                                        <div class="form-group">
+                                                            <textarea class="form-control mb-10" rows="5" name="message" placeholder="Mesaj yazınız." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
+                                                        </div>
+                                                        <a href="#" class="mt-40 text-uppercase genric-btn primary text-center">Post Comment</a>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="jq-tab-content" style="text-align:center;" data-tab="5">
+                                                <div class="review-top row pt-40">
+                                                    <div class="col-lg-3">
+                                                        <div class="avg-review">
+                                                            Ortalama <br>
+                                                            <span>4.6</span> <br>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-9">
+                                                        <h4 class="mb-20">Kursu Oylayın</h4>
+                                                        <div class="d-flex flex-row reviews">
+                                                            <span></span>
+                                                            <div class="star">
+                                                                <i class="fa fa-star checked"></i>
+                                                                <i class="fa fa-star checked"></i>
+                                                                <i class="fa fa-star checked"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                            </div>
+                                                            <span>Çok iyi</span>
+                                                        </div>
+
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="feedeback">
+                                                    <h4 class="pb-20">Yorumunuz</h4>
+                                                    <textarea name="feedback" class="form-control" cols="10" rows="10"></textarea>
+                                                    <a href="#" class="mt-20 primary-btn text-right text-uppercase">Submit</a>
+                                                </div>
+                                                <div class="comments-area mb-30">
+                                                    <div class="comment-list">
+                                                        <div class="single-comment single-reviews justify-content-between d-flex">
+                                                            <div class="user justify-content-between d-flex">
+                                                                <div class="thumb">
+                                                                    <img src="img/blog/c1.jpg" alt="">
+                                                                </div>
+                                                                <div class="desc">
+                                                                    <h5>
+                                                                        <a href="#">User</a>
+                                                                        <div class="star">
+                                                                            <span class="fa fa-star checked"></span>
+                                                                            <span class="fa fa-star checked"></span>
+                                                                            <span class="fa fa-star checked"></span>
+                                                                            <span class="fa fa-star"></span>
+                                                                            <span class="fa fa-star"></span>
+                                                                        </div>
+                                                                    </h5>
+                                                                    <p class="comment">
+                                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum ut sed, dolorum asperiores perspiciatis provident, odit maxime doloremque aliquam.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="comment-list">
+                                                        <div class="single-comment single-reviews justify-content-between d-flex">
+                                                            <div class="user justify-content-between d-flex">
+                                                                <div class="thumb">
+                                                                    <img src="img/blog/c2.jpg" alt="">
+                                                                </div>
+                                                                <div class="desc">
+                                                                    <h5>
+                                                                        <a href="#">User</a>
+                                                                        <div class="star">
+                                                                            <span class="fa fa-star checked"></span>
+                                                                            <span class="fa fa-star checked"></span>
+                                                                            <span class="fa fa-star checked"></span>
+                                                                            <span class="fa fa-star"></span>
+                                                                            <span class="fa fa-star"></span>
+                                                                        </div>
+                                                                    </h5>
+                                                                    <p class="comment">
+                                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum ut sed, dolorum asperiores perspiciatis provident, odit maxime doloremque aliquam.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 right-contents">
+                                    <ul>
+                                        <li>
+                                            <a class="justify-content-between d-flex" href="#">
+                                                <p>Eğitmen Adı</p>
+                                                <span class="or">@Model.Trainer</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="justify-content-between d-flex" href="#">
+                                                <p>Ücret </p>
+                                                <span>@Model.Price Kredi </span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a class="justify-content-between d-flex" href="#">
+                                                <p>Süre </p>
+                                                <span>@Model.Duration Dk</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+
+
+
+                                </div>
+                            </div>
+                    </section>
+                </div>
+            </div>
+            <br />  <br />  <br />  <br />  <br />  <br />  <br />  <br />  <br />  <br /> 
+        </div>
+                    </div>
+            
+         
+
+    
+
+    <br />
+
+
+</body>
+</html>
+
